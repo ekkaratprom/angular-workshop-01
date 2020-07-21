@@ -1,0 +1,30 @@
+
+  First name : 
+    <input (keyup)= "inputYourName($event)" 
+    (keyup.enter)=saveName()/>
+  
+  <br/>
+
+  Last name : 
+    <input 
+    #lastname 
+    (keyup)="inputLastname(lastname.value)"
+    (keyup.enter)=saveName()/>
+
+
+  <br/>
+  <button (click)="saveName()">Save</button>
+  <br/>
+
+    <p>count = {{ completed }}/{{ users.length }} </p>
+
+  Result = {{ name }}
+
+  <ul *ngIf="show">
+  
+    <li *ngFor="let user of users ; index as i" 
+    [ngClass]="user.completed ? 'todo-complete':'todo-not-complete'" 
+    (click)="selected(i)">
+    {{ user.task }}</li>
+  
+  </ul>
